@@ -1,0 +1,58 @@
+{
+  "order": 0,
+  "template": "filebeat-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1",
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "dynamic_templates": [
+        {
+          "strings_as_keyword": {
+            "mapping": {
+              "type": "keyword"
+            },
+            "match_mapping_type": "string"
+          }
+        }
+      ],
+      "_all": {
+        "norms": false
+      },
+      "date_detection": false,
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "offset": {
+          "type": "long"
+        },
+        "input_type": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "source": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "type": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "message": {
+          "norms": false,
+          "type": "text"
+        },
+        "tags": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}
