@@ -1,0 +1,30 @@
+{
+  "order": 1,
+  "template": "filebeat-proxy-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "5",
+      "number_of_replicas": "1",
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "properties": {
+        "wsa_sc_bytes": {
+          "type": "integer"
+        },
+        "wsa_sc_http_status": {
+          "type": "integer"
+        },
+        "wsa_c_ip": {
+          "type": "ip"
+        },
+        "wsa_x_elapsed_time": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}
