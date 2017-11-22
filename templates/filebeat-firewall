@@ -1,0 +1,70 @@
+{
+  "order": 1,
+  "template": "filebeat-firewall-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "5",
+      "number_of_replicas": "1",
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "properties": {
+        "checkpoint_proxy_src_ip": {
+          "type": "ip"
+        },
+        "geoip": {
+          "properties": {
+            "location": {
+              "type": "geo_point"
+            }
+          }
+        },
+        "asa_dst_port": {
+          "type": "integer"
+        },
+        "checkpoint_xlatedst": {
+          "type": "ip"
+        },
+        "asa_hit_count": {
+          "type": "integer"
+        },
+        "checkpoint_NAT_rulenum": {
+          "type": "integer"
+        },
+        "checkpoint_xlatesrc": {
+          "type": "ip"
+        },
+        "checkpoint_service": {
+          "type": "integer"
+        },
+        "checkpoint_dst": {
+          "type": "ip"
+        },
+        "checkpoint_src": {
+          "type": "ip"
+        },
+        "asa_dst_ip": {
+          "type": "ip"
+        },
+        "asa_src_ip": {
+          "type": "ip"
+        },
+        "checkpoint_rule": {
+          "type": "integer"
+        },
+        "asa_src_port": {
+          "type": "integer"
+        },
+        "checkpoint_s_port": {
+          "type": "integer"
+        },
+        "checkpoint_xlatesport": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}
