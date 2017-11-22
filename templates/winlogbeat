@@ -1,0 +1,183 @@
+{
+  "order": 0,
+  "template": "winlogbeat-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "3",
+      "number_of_replicas": "1",
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "_meta": {
+        "version": "5.5.0"
+      },
+      "dynamic_templates": [
+        {
+          "strings_as_keyword": {
+            "mapping": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "match_mapping_type": "string"
+          }
+        }
+      ],
+      "_all": {
+        "norms": false
+      },
+      "date_detection": false,
+      "properties": {
+        "related_activity_id": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "computer_name": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "process_id": {
+          "type": "long"
+        },
+        "keywords": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "level": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "log_name": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "message_error": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "record_number": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "message": {
+          "norms": false,
+          "type": "text"
+        },
+        "opcode": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "type": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "version": {
+          "type": "long"
+        },
+        "tags": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "thread_id": {
+          "type": "long"
+        },
+        "@timestamp": {
+          "type": "date"
+        },
+        "event_id": {
+          "type": "long"
+        },
+        "task": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "provider_guid": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "meta": {
+          "properties": {
+            "cloud": {
+              "properties": {
+                "machine_type": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "availability_zone": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "instance_id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "project_id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "provider": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "region": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "xml": {
+          "norms": false,
+          "type": "text"
+        },
+        "activity_id": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
+        "beat": {
+          "properties": {
+            "hostname": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "name": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "version": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
+        },
+        "user": {
+          "properties": {
+            "identifier": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "domain": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "name": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "type": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
+        },
+        "source_name": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}
