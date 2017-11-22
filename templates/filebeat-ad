@@ -1,0 +1,119 @@
+{
+  "order": 1,
+  "template": "filebeat-ad-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1",
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "dynamic": "false",
+      "properties": {
+        "@version": {
+          "type": "keyword"
+        },
+        "fields": {
+          "properties": {
+            "input": {
+              "type": "keyword"
+            }
+          }
+        },
+        "host": {
+          "type": "keyword"
+        },
+        "Description": {
+          "type": "keyword"
+        },
+        "LockoutTime": {
+          "type": "date"
+        },
+        "GivenName": {
+          "type": "keyword"
+        },
+        "PostalCode": {
+          "type": "keyword"
+        },
+        "ObjectGUID": {
+          "type": "keyword"
+        },
+        "Manager": {
+          "type": "keyword"
+        },
+        "Department": {
+          "type": "keyword"
+        },
+        "LastBadPasswordAttempt": {
+          "type": "date"
+        },
+        "LockedOut": {
+          "type": "keyword"
+        },
+        "MemberOf": {
+          "type": "keyword"
+        },
+        "DisplayName": {
+          "type": "keyword"
+        },
+        "BadLogonCount": {
+          "type": "integer"
+        },
+        "userAccountControl": {
+          "type": "keyword"
+        },
+        "CanonicalName": {
+          "type": "keyword"
+        },
+        "SamAccountName": {
+          "type": "keyword"
+        },
+        "PasswordNotRequired": {
+          "type": "keyword"
+        },
+        "badPasswordTime": {
+          "type": "date"
+        },
+        "CannotChangePassword": {
+          "type": "keyword"
+        },
+        "PasswordExpired": {
+          "type": "keyword"
+        },
+        "PasswordNeverExpires": {
+          "type": "keyword"
+        },
+        "AccountLockoutTime": {
+          "type": "keyword"
+        },
+        "createTimeStamp": {
+          "type": "date"
+        },
+        "Enabled": {
+          "type": "keyword"
+        },
+        "EmailAddress": {
+          "type": "keyword"
+        },
+        "LogonCount": {
+          "type": "integer"
+        },
+        "PrimaryGroup": {
+          "type": "keyword"
+        },
+        "PasswordLastSet": {
+          "type": "date"
+        },
+        "LastLogonDate": {
+          "type": "date"
+        },
+        "Surname": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}
