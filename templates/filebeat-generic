@@ -1,0 +1,45 @@
+{
+  "order": 1,
+  "template": "filebeat-generic-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1",
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "properties": {
+        "acs_DestinationIPAddress": {
+          "type": "ip"
+        },
+        "acs_Privilege-Level": {
+          "type": "integer"
+        },
+        "acs_Remote-Address": {
+          "type": "ip"
+        },
+        "acs_RequestLatency": {
+          "type": "integer"
+        },
+        "acs_Device Port": {
+          "type": "integer"
+        },
+        "acs_Device IP Address": {
+          "type": "ip"
+        },
+        "acs_DestinationPort": {
+          "type": "integer"
+        },
+        "acs_NAS-Port": {
+          "type": "integer"
+        },
+        "acs_NAS-IP-Address": {
+          "type": "ip"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}
